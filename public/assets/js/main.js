@@ -28,9 +28,21 @@ document.getElementById('btn-filtrar-precio').addEventListener('click', () => {
   filtrado();
 });
 
+document.getElementById('btn-limpiar-filtros').addEventListener('click', () => {
+  document.querySelectorAll('.filtro-categoria:checked').forEach(cb => {
+    cb.checked = false;
+  });
+  document.getElementById('precio-min').value = '';
+  document.getElementById('precio-max').value = '';
+  document.getElementById('sort').value = '';
+  console.log('limpiado');
+
+  filtrado();
+});
+
 function filtrado() {
+  console.log('filtrado');
   let seleccionados = Array.from(document.querySelectorAll('.filtro-categoria:checked')).map(cb => cb.value);
-  categoriasSeleccionadasGlobal = seleccionados.join(',');
   categoriasSeleccionadasGlobal = seleccionados.join(',');
   precioMinGlobal = document.getElementById('precio-min').value || 0;
   precioMaxGlobal = document.getElementById('precio-max').value || 999999;
