@@ -8,26 +8,6 @@ require_once __DIR__ . '/../../core/Database.php';
 
 class ProductsModel
 {
-    // Todos los productos
-    // public function getAll_Products($tabla, $custom)
-    // {
-    //     $conn = Database::connect();
-    //     $cstm = $custom == 1 ? " LEFT JOIN " . $tabla . "_cstm ON id = id_c" : "";
-    //     $sql = "SELECT * FROM $tabla $cstm WHERE deleted = 0";
-    //     $result = $conn->query($sql);
-
-    //     $productos = [];
-    //     if ($result && $result->num_rows > 0) {
-    //         while ($fila = $result->fetch_assoc()) {
-    //             $fila['precio_final']   = !empty($fila['precio_promo'])         ? $fila['precio_promo'] : $fila['price'];
-    //             $fila['en_oferta']      = !empty($fila['porcentaje_descuento']) && $fila['porcentaje_descuento'] > 0;
-
-    //             $productos[] = $fila;
-    //         }
-    //     }
-    //     return $productos;
-    // }
-
     // Productos paginados
     public function getPaginated_Products($limit, $offset, $categorias, $precioMin, $precioMax, $sort, $filtroExtra, $valorFiltroExtra)
     {

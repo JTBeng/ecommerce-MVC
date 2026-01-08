@@ -13,5 +13,6 @@ if ($cantidadValores > 0) {
 }
 
 // <!-- BOTON PRODUCTOS -->
-include __DIR__ . '/../components/conocenos/botonProductos.php';
+include __DIR__ . '/../components/generales/botonProductos.php';
 ?>
+

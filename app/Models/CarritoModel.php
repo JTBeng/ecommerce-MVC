@@ -6,10 +6,10 @@ use Core\Database;
 
 require_once __DIR__ . '/../../core/Database.php';
 
-class cartModel
+class carritoModel
 {
     // Productos LISTA DE DESEOS
-    public function getCart()
+    public function getCarrito()
     {
         $conn = Database::connect();
         $hoy = date('Y-m-d');
