@@ -1,6 +1,7 @@
 <?php ?>
-<footer class="bg-white text-center text-sm text-gray-600 pt-10 mt-10 shadow">
-
+<footer class="text-center text-sm text-gray-600 pt-2 mt-4 shadow bg<?= $config['color_principal'] ?>/15">
+    <!-- BOTON PRODUCTOS -->
+    <?php include __DIR__ . '/../components/generales/botonProductos.php'; ?>
     <!-- Contenido superior con 4 columnas -->
     <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-left pb-6">
 
@@ -45,7 +46,6 @@
         </div>
 
     </div>
-
     <!-- Copyright -->
     <div class="border-t border-gray-200 pt-4">
         <p class="text-gray-500">
@@ -53,5 +53,4 @@
             <a href="https://empresistemas.com" class="text-blue-600 hover:underline">Empresistemas</a>
         </p>
     </div>
-
 </footer>

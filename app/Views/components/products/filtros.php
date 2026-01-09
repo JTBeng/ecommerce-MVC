@@ -1,6 +1,6 @@
 <!-- sidebar  -->
 <section id="sidebar"
-    class="fixed top-0 left-0 z-50 h-full w-[300px] bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out lg:sticky lg:top-30 lg:translate-x-0 lg:block flex-shrink-0 px-4 text-xl lg:text-sm">
+    class="fixed top-0 left-0 z-50 max-w-6xl h-full  bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out lg:sticky lg:top-20 lg:translate-x-0 lg:block flex-shrink-0 px-4 text-xl lg:text-sm">
     
     <div class="flex border-b pb-5">
         <div class="w-full">

@@ -36,19 +36,17 @@
     </script>
 </head>
 
-<body x-data="{ desktopMenuOpen: false, mobileMenuOpen: false} ">
-    <main class="h-screen flex flex-col justify-between">
-        <?php require __DIR__ . '/header.php'; ?>
-
-        <!-- <main class="container mx-auto mt-10"> -->
-        <?php include $contentView; ?>
-        <!-- </main> -->
-
-        <?php require __DIR__ . '/flooter.php'; ?>
-        <script src="/assets/js/main.js"></script>
-        <script src="<?= empty($contentJs) ? '' : $contentJs ?>"></script>
-
+<body x-data="{ desktopMenuOpen: false, mobileMenuOpen: false }"
+    class="min-h-screen flex flex-col text-[15px] lg:text-[14.5px]">
+    <?php require __DIR__ . '/header.php'; ?>
+    <main class="flex-1">
+        <div class="mx-auto px-4">
+            <?php include $contentView; ?>
+        </div>
     </main>
+    <?php require __DIR__ . '/flooter.php'; ?>
+    <script src="/assets/js/main.js"></script>
+    <script src="<?= empty($contentJs) ? '' : $contentJs ?>"></script>
 </body>
 
 </html>

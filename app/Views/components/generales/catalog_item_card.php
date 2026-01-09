@@ -1,5 +1,5 @@
 <section>
-    <div class="flex flex-col gap-4 p-5">
+    <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col gap-4">
         <?php
         if (!empty($products)):
         ?>
@@ -62,7 +62,7 @@
                             <!-- CARRITO -->
                             <?php if (!empty($wishList)): ?>
                                 <div class="flex items-center gap-2">
-                                    <button class="w-full py-2 rounded-xl bg-gradient-to-r from<?= $config['color_principal'] ?> to<?= $config['color_secundario'] ?> text-white font-semibold shadow hover:scale-105 transition-transform duration-300">
+                                    <button class="text-sm w-full py-2.5 rounded-xl bg-gradient-to-r from<?= $config['color_principal'] ?> to<?= $config['color_secundario'] ?> text-white font-semibold shadow hover:scale-105 transition-transform duration-300">
                                         Agregar al Carrito
                                     </button>
                                 </div>

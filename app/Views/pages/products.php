@@ -1,4 +1,4 @@
-<section class="container mx-auto flex-grow max-w-[1200px] border-b py-5 lg:flex lg:flex-row lg:py-10 text-xl lg:text-sm">
+<section class="container mx-auto flex-grow w-full max-w-6xl border-b py-5 lg:flex lg:flex-row lg:py-10 text-xl lg:text-sm">
   <?php
   // <!-- FILTROS -->
   include __DIR__ . '/../components/products/filtros.php';
