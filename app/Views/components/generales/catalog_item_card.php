@@ -3,16 +3,14 @@
         <?php
         if (!empty($products)):
         ?>
-            <div class="grid  <?= $gridClasses ?> gap-4">
+            <div class="grid <?= $gridClasses ?> gap-4">
                 <?php
                 foreach ($products as $product):
                 ?>
-
                     <div class="flex items-stretch gap-4 rounded-xl bg-white p-4 shadow-sm">
                         <div class="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 bg-center bg-no-repeat bg-cover rounded-lg"
                             style='background-image: url("https://wenzhou.erponweb.com.mx/customcode/imagenes/<?= $product['nombre_imagen'] ?>")'>
                         </div>
-
                         <div class="flex flex-1 flex-col justify-between">
                             <div class="flex justify-between items-start">
                                 <a
