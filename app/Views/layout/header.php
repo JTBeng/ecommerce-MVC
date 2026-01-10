@@ -3,7 +3,7 @@
     const appConfig = <?= json_encode($config) ?>;
 </script>
 
-<header class="sticky top-0 z-10 flex items-center justify-between bg<?= $config['color_principal'] ?>/15 px-4 backdrop-blur-sm">
+<header class="sticky top-0 z-50 flex items-center justify-between bg<?= $config['color_principal'] ?>/15 px-4 backdrop-blur-sm">
     <a href="/contacto">
         <!-- Logo -->
         <div class="flex items-center gap-3">

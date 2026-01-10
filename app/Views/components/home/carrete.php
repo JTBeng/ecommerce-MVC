@@ -6,13 +6,7 @@ function carrete($id, $items, $config)
 ?>
     <div class="relative w-full  bg-gradient-to-b from-white via-gray-50 to-gray-100 overflow-hidden">
         <!-- Botón Izquierdo (solo visible en escritorio) -->
-        <button
-            id="btn-left-<?= htmlspecialchars($id) ?>"
-            class="hidden lg:flex absolute left-0 top-0 h-full w-16 z-10 items-center justify-center 
-            bg-gradient-to-r from<?= $config['base_clara'] ?> to-transparent 
-            hover:from<?= $config['color_secundario'] ?> transition-all duration-300 
-            text-white text-3xl font-bold shadow-inner backdrop-blur-[2px]"
-            aria-label="Scroll Izquierda">
+        <button id="btn-left-<?= htmlspecialchars($id) ?>" class="hidden lg:flex absolute left-0 top-0 h-full w-16 z-10 items-center justify-center bg-gradient-to-r from<?= $config['base_clara'] ?> to-transparent hover:from<?= $config['color_secundario'] ?> transition-all duration-300 text-white text-3xl font-bold shadow-inner backdrop-blur-[2px]" aria-label="Scroll Izquierda">
             &#10094;
         </button>
 
@@ -31,42 +25,10 @@ function carrete($id, $items, $config)
         </div>
 
         <!-- Botón Derecho (solo visible en escritorio) -->
-        <button
-            id="btn-right-<?= htmlspecialchars($id) ?>"
-            class="hidden lg:flex absolute right-0 top-0 h-full w-16 z-10 items-center justify-center 
-            bg-gradient-to-l from<?= $config['base_clara'] ?> to-transparent 
-            hover:from<?= $config['color_secundario'] ?> transition-all duration-300 
-            text-white text-3xl font-bold shadow-inner backdrop-blur-[2px]"
-            aria-label="Scroll Derecha">
+        <button id="btn-right-<?= htmlspecialchars($id) ?>" class="hidden lg:flex absolute right-0 top-0 h-full w-16 z-10 items-center justify-center bg-gradient-to-l from<?= $config['base_clara'] ?> to-transparent hover:from<?= $config['color_secundario'] ?> transition-all duration-300 text-white text-3xl font-bold shadow-inner backdrop-blur-[2px]" aria-label="Scroll Derecha">
             &#10095;
         </button>
     </div>
-
-    <script>
-        (function() {
-            const container = document.getElementById("carrete-<?= $id ?>");
-            const btnLeft = document.getElementById("btn-left-<?= $id ?>");
-            const btnRight = document.getElementById("btn-right-<?= $id ?>");
-
-            const scrollAmount = container.offsetWidth;
-
-            if (btnLeft && btnRight) {
-                btnLeft.addEventListener("click", () => {
-                    container.scrollBy({
-                        left: -scrollAmount,
-                        behavior: "smooth"
-                    });
-                });
-
-                btnRight.addEventListener("click", () => {
-                    container.scrollBy({
-                        left: scrollAmount,
-                        behavior: "smooth"
-                    });
-                });
-            }
-        })();
-    </script>
 <?php
 }
 
@@ -112,17 +74,3 @@ function render_carrete_principal($item, $config)
 }
 
 ?>
-<!-- 
-        <div class="flex items-center justify-center lg:hidden flex-shrink-0 w-full snap-center " style="vertical-align: center;">
-            <div class="flex flex-col gap-4 mx-auto rounded-4xl shadow-sm min-w-full">
-                <a href="' . $url . '"
-                    class=" w-[800px] h-[400px] bg-no-repeat aspect-[4/3] sm:aspect-video bg-cover rounded-xl flex flex-col items-start justify-end p-6"
-                    style="background-image: url(\'' . $imgUrl . '\');">
-
-                    <div class="bg-black/30 p-4 rounded-lg w-[700px] h-[380px]">
-                        <p class="text-white text-2xl font-bold leading-tight">' . $name . '</p>
-                        <p class="text-slate-200 text-sm font-normal leading-normal mt-1">' . $description . '</p>
-                    </div>
-                </a>
-            </div>
-        </div> -->
