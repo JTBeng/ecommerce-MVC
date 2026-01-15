@@ -28,17 +28,7 @@
         </button>
     </div>
 
-    <form
-        class="
-        hidden md:flex items-center
-        w-full max-w-xl
-        h-10
-        rounded-xl
-        border border-gray-200
-        bg-white
-        shadow-sm
-        focus-within:ring-2 focus-within:ring<?= $config['color_principal'] ?>
-    ">
+    <form action="/products" method="GET" autocomplete="off" class="relative hidden md:flex items-center w-full max-w-xl h-10 rounded-xl border border-gray-200  bg-white  shadow-sm  focus-within:ring-2 focus-within:ring<?= $config['color_principal'] ?>">
         <!-- ICONO -->
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,13 +42,22 @@
                 stroke-linejoin="round"
                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
         </svg>
+
         <!-- INPUT -->
-        <input type="search" placeholder="Buscar productos" class=" border border-gray-200/40 flex-1 px-3 text-sm outline-none bg-transparent placeholder-gray-400" />
+        <input type="search" id="searchInput" name="name" placeholder="Buscar productos" class="border border-gray-200/40 flex-1 px-3 text-sm outline-none bg-transparent placeholder-gray-400" />
+
         <!-- BOTÓN -->
         <button type="submit" class="h-full px-5 rounded-r-xl bg<?= $config['base_clara'] ?> text-sm font-semibold transition hover:bg<?= $config['hover'] ?>">
             Buscar
         </button>
+
+        <!-- AUTOCOMPLETE -->
+        <div
+            id="autocompleteResults"
+            class="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-b-xl shadow-lg z-50 hidden">
+        </div>
     </form>
+
 
     <div class=" hidden gap-3 md:!flex">
         <a
