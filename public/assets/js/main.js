@@ -49,24 +49,61 @@ input.addEventListener("input", () => {
             },
             body: "q=" + encodeURIComponent(value)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            box.innerHTML = "";
-            if (!data.length) {
-                box.classList.add("hidden");
-                return;
-            }
-            box.classList.remove("hidden");
-            data.forEach(item => {
-                box.innerHTML += `
-                    <div class="autocomplete-item flex items-center gap-3 p-2 hover:bg-gray-100 cursor-pointer" data-id="${item.id}">
-                        <img src="https://wenzhou.erponweb.com.mx/customcode/imagenes/${item.nombre_imagen}" class="w-10 h-10 object-cover rounded" />
-                        <span class="text-sm">${item.name}</span>
-                    </div>
-                `;
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                box.innerHTML = "";
+                if (!data.length) {
+                    box.classList.add("hidden");
+                    return;
+                }
+                box.classList.remove("hidden");
+                data.forEach(item => {
+                    const enOferta = item.en_oferta != '';
+                    box.innerHTML += `
+                                        <div 
+                                            class="autocomplete-item flex items-center gap-3 p-3 cursor-pointer transition-all duration-200
+                                            ${enOferta
+                                                            ? 'bg-gradient-to-r from-pink-50 to-rose-50 hover:scale-[1.02] border-l-4 border-pink-500 shadow-sm'
+                                                            : 'hover:bg-gray-100'
+                                                        }"
+                                            data-id="${item.id}"
+                                        >
+
+                                            <!-- Imagen -->
+                                            <img 
+                                                src="https://wenzhou.erponweb.com.mx/customcode/imagenes/${item.nombre_imagen}" 
+                                                class="w-12 h-12 object-cover rounded ${enOferta ? 'ring-2 ring-pink-400' : ''}"
+                                            />
+
+                                            <!-- Info -->
+                                            <div class="flex flex-col flex-1">
+                                                
+                                                <!-- Nombre -->
+                                                <span class="text-sm font-medium ${enOferta ? 'text-pink-700' : ''}">
+                                                    ${item.name}
+                                                </span>
+
+                                                <!-- Precio -->
+                                                <div class="flex items-center gap-2">
+
+                                                    <span class="text-sm font-bold ${enOferta ? 'text-pink-600 text-base' : ''}">
+                                                        $${item.precio_final}
+                                                    </span>
+
+                                                    ${enOferta
+                                                            ? `<span class="text-xs bg-pink-500 text-white px-2 py-0.5 rounded-full animate-pulse">
+                                                                🔥 OFERTA
+                                                        </span>`
+                                                            : ''
+                                                        }
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `;
+                });
             });
-        });
     }, 300);
 });
 

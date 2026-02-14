@@ -31,12 +31,19 @@ class SearchModel
             LEFT JOIN jb_jb_promociones_ecommer promo 
                 ON promo.aos_products_id_c = p.id
                 AND '$hoy' BETWEEN promo.inicio_promo AND promo.fin_promo
-                WHERE p.name LIKE '$name' LIMIT 10";
+                WHERE p.deleted = '0' AND p.name LIKE '%$name%' LIMIT 4";
         $result = $conn->query($sql);
         //echo $sql;
         $productosBusqueda = [];
         if ($result && $result->num_rows > 0) {
             while ($fila = $result->fetch_assoc()) {
+                $fila['precio_final']   = !empty($fila['precio_promo']) ? $fila['precio_promo'] : $fila['price'];
+                $fila['en_oferta']      = !empty($fila['porcentaje_descuento']) && $fila['porcentaje_descuento'] > 0 ? 'Precio Especial' : '';
+
+                $fila['porcentaje_descuento'] = ($fila['porcentaje_descuento'] == floor($fila['porcentaje_descuento']))
+                    ? intval($fila['porcentaje_descuento'])
+                    : $fila['porcentaje_descuento'];
+
                 $productosBusqueda[] = $fila;
             }
         }

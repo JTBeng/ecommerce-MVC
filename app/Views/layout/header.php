@@ -54,7 +54,7 @@
         <!-- AUTOCOMPLETE -->
         <div
             id="autocompleteResults"
-            class="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-b-xl shadow-lg z-50 hidden">
+            class="absolute top-full left-8 w-4/5 bg-white border border-gray-200 rounded-b-xl shadow-lg z-50 hidden">
         </div>
     </form>
 
